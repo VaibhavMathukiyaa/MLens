@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+/* 
+  Theme Configuration 
+  Using 'Inter' for a clean, technical look preferred by engineering teams.
+*/
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --color-brand-blue: #3b82f6;
+  --color-brand-red: #ef4444;
+  --color-bg-dark: #050505;
+  --color-card-dark: #0a0a0c;
+}
+
+/* 
+  Global Resets & Base Styles
+*/
+:root {
+  background-color: var(--color-bg-dark);
+  color: #f8fafc;
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 
+  Custom Scrollbar 
+  Adds a premium "SaaS" feel to the dashboard.
+*/
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* 
+  Utility Classes for Dashboard Effects
+*/
+
+/* Subtle glassmorphism border */
+.glass-border {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Pulse animation for 'Drift Detected' status */
+@keyframes soft-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(0.98); }
+}
+
+.status-pulse {
+  animation: soft-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Smooth transitions for interactive elements */
+.transition-dashboard {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 
+  Recharts Overrides 
+  Ensures charts match the dark theme perfectly.
+*/
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: rgba(255, 255, 255, 0.03);
+}
+
+.recharts-tooltip-cursor {
+  fill: rgba(255, 255, 255, 0.05);
+}

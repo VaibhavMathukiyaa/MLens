@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.env
+
+# ML Artifacts (Users should run trainer.py to generate these)
+backend/app/ml_core/artifacts/
+
+# Node
+node_modules/
+dist/
+.env.local
+
+# OS
+.DS_Store
